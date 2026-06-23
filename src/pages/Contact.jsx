@@ -1,8 +1,6 @@
 import { useState } from 'react'
 
 const contactEmail = 'zeynepsanli2002@gmail.com'
-const gmailComposeUrl =
-  'https://mail.google.com/mail/?view=cm&fs=1&to=zenyenpsanli2002@gmail.com&su=Beslenme%20Dan%C4%B1%C5%9Fmanl%C4%B1%C4%9F%C4%B1%20Hakk%C4%B1nda'
 const instagramUrl =
   'https://www.instagram.com/dytbeyzanurnarbay?igsh=dzV6YmJ2MnAyamk1'
 const formEndpoint = `https://formsubmit.co/ajax/${contactEmail}`
@@ -66,7 +64,7 @@ function Contact() {
         <div className="contact-panel">
           <div>
             <span>Email</span>
-            <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+            <p>{contactEmail}</p>
           </div>
           <div>
             <span>Konum</span>
@@ -75,11 +73,11 @@ function Contact() {
           <div className="contact-actions">
             <a
               className="button primary"
-              href={gmailComposeUrl}
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=zenyenpsanli2002@gmail.com&su=Beslenme%20Dan%C4%B1%C5%9Fmanl%C4%B1%C4%9F%C4%B1%20Hakk%C4%B1nda"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Mail gönder
+              Mail Gönder
             </a>
             <a
               className="button secondary"

@@ -33,7 +33,7 @@ function About() {
         </div>
       </article>
       <section className="about-interests" aria-labelledby="interests-title">
-        <h2 id="interests-title">İlgi Alanları ve Eğitimlerim</h2>
+        <h2 id="interests-title">İlgi Alanlarım ve Eğitimlerim</h2>
         <div className="interest-grid">
           {interests.map((interest) => (
             <article className="interest-card" key={interest}>
