@@ -1,4 +1,4 @@
-const contactEmail = 'zeynepsanli2002@gmail.com'
+const contactEmail = 'dytbeyzanurnarbay@gmail.com'
 const instagramUrl = 'https://www.instagram.com/dytbeyzanurnarbay?igsh=dzV6YmJ2MnAyamk1'
 
 function Footer() {

@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Footer from './components/Footer.jsx'
 import Navbar from './components/Navbar.jsx'
+import ScrollToTop from './components/ScrollToTop.jsx'
 import About from './pages/About.jsx'
 import Blog from './pages/Blog.jsx'
 import Contact from './pages/Contact.jsx'
@@ -10,6 +11,7 @@ import Services from './pages/Services.jsx'
 function App() {
   return (
     <BrowserRouter basename="/diyetisyen-blog">
+      <ScrollToTop />
       <div className="app-shell">
         <Navbar />
         <main className="page-content">
