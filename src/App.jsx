@@ -19,6 +19,7 @@ function App() {
             <Route path="/hizmetler" element={<Services />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/iletisim" element={<Contact />} />
+            <Route path="*" element={<Home />} />
           </Routes>
         </main>
         <Footer />

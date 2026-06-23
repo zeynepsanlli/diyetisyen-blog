@@ -5,6 +5,21 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diyetisyen Beyzanur Narbay</title>
+    <script>
+      ;(() => {
+        const redirectPath = new URLSearchParams(window.location.search).get(
+          'redirect',
+        )
+
+        if (redirectPath) {
+          window.history.replaceState(
+            null,
+            '',
+            `/diyetisyen-blog${redirectPath}`,
+          )
+        }
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>
