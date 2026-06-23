@@ -82,6 +82,27 @@ select {
   justify-content: flex-end;
 }
 
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--color-primary-dark);
+}
+
 .nav-link {
   border-radius: 999px;
   color: var(--color-muted);
@@ -537,6 +558,43 @@ select {
   margin-top: 4px;
 }
 
+.email-block {
+  display: grid;
+  gap: 8px;
+}
+
+.email-copy-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.email-copy-row p {
+  overflow-wrap: anywhere;
+}
+
+.copy-button {
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 750;
+  padding: 8px 13px;
+}
+
+.copy-button:hover {
+  background: var(--color-surface-warm);
+}
+
+.copy-message {
+  color: var(--color-primary-dark);
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
 .contact-form {
   display: grid;
   gap: 18px;
@@ -628,18 +686,46 @@ select {
 
 @media (max-width: 720px) {
   .navbar {
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 16px;
+    position: relative;
+    align-items: center;
+    padding: 14px 16px;
+  }
+
+  .brand {
+    max-width: calc(100% - 58px);
+    white-space: normal;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    margin-left: auto;
   }
 
   .nav-links {
-    width: 100%;
-    justify-content: flex-start;
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 16px;
+    left: 16px;
+    width: auto;
+    align-items: stretch;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-surface);
+    box-shadow: var(--shadow-soft);
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px;
+    z-index: 10;
+  }
+
+  .nav-links.open {
+    display: flex;
   }
 
   .nav-link {
-    padding: 8px 10px;
+    padding: 11px 12px;
+    text-align: left;
   }
 
   .page-content {

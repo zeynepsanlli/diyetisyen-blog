@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 const navItems = [
@@ -9,13 +10,34 @@ const navItems = [
 ]
 
 function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const closeMenu = () => {
+    setIsMenuOpen(false)
+  }
+
   return (
     <header className="site-header">
       <nav className="navbar" aria-label="Ana menü">
-        <NavLink className="brand" to="/">
+        <NavLink className="brand" onClick={closeMenu} to="/">
           Diyetisyen Beyzanur Narbay
         </NavLink>
-        <div className="nav-links">
+        <button
+          aria-controls="primary-navigation"
+          aria-expanded={isMenuOpen}
+          aria-label="Menüyü aç veya kapat"
+          className="menu-toggle"
+          onClick={() => setIsMenuOpen((current) => !current)}
+          type="button"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+        <div
+          className={isMenuOpen ? 'nav-links open' : 'nav-links'}
+          id="primary-navigation"
+        >
           {navItems.map((item) => (
             <NavLink
               className={({ isActive }) =>
@@ -23,6 +45,7 @@ function Navbar() {
               }
               end={item.path === '/'}
               key={item.path}
+              onClick={closeMenu}
               to={item.path}
             >
               {item.label}
