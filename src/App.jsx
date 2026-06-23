@@ -9,7 +9,7 @@ import Services from './pages/Services.jsx'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/diyetisyen-blog">
       <div className="app-shell">
         <Navbar />
         <main className="page-content">
