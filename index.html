@@ -5,7 +5,22 @@
     <link rel="icon" type="image/svg+xml" href="/diyetisyen-blog/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diyetisyen Beyzanur Narbay</title>
-    <script type="module" crossorigin src="/diyetisyen-blog/assets/index-vWPSAHWz.js"></script>
+    <script>
+      ;(() => {
+        const redirectPath = new URLSearchParams(window.location.search).get(
+          'redirect',
+        )
+
+        if (redirectPath) {
+          window.history.replaceState(
+            null,
+            '',
+            `/diyetisyen-blog${redirectPath}`,
+          )
+        }
+      })()
+    </script>
+    <script type="module" crossorigin src="/diyetisyen-blog/assets/index-C10-B7WQ.js"></script>
     <link rel="stylesheet" crossorigin href="/diyetisyen-blog/assets/index-B5f7prTN.css">
   </head>
   <body>
