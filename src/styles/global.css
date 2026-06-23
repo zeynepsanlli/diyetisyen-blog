@@ -653,12 +653,126 @@ select {
   border-top: 1px solid var(--color-border);
   background: var(--color-surface);
   color: var(--color-muted);
-  padding: 24px;
-  text-align: center;
+  padding: 48px 24px 32px;
 }
 
-.site-footer p {
+.footer-content {
+  width: min(1120px, 100%);
+  margin: 0 auto 36px;
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.footer-brand-section {
+  max-width: 360px;
+  text-align: left;
+}
+
+.footer-title {
+  color: var(--color-primary-dark);
+  font-size: 1.25rem;
+  font-weight: 750;
+  margin: 0 0 12px;
+}
+
+.footer-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-muted);
   margin: 0;
+}
+
+.footer-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.footer-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-info-label {
+  font-size: 0.75rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+}
+
+.footer-info-text {
+  font-size: 0.95rem;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.footer-link {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: var(--color-primary);
+}
+
+.footer-instagram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-instagram-link:hover {
+  color: var(--color-primary);
+}
+
+.instagram-icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.footer-instagram-link:hover .instagram-icon {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--color-border);
+  padding-top: 24px;
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 24px;
+  }
+
+  .footer-brand-section {
+    max-width: none;
+  }
+
+  .footer-info-section {
+    gap: 20px;
+  }
 }
 
 @media (max-width: 900px) {

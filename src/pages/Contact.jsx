@@ -1,8 +1,6 @@
 import { useState } from 'react'
 
 const contactEmail = 'zeynepsanli2002@gmail.com'
-const mailLink =
-  'mailto:zeynepsanli2002@gmail.com?subject=Beslenme%20Dan%C4%B1%C5%9Fmanl%C4%B1%C4%9F%C4%B1%20Hakk%C4%B1nda'
 const instagramUrl =
   'https://www.instagram.com/dytbeyzanurnarbay?igsh=dzV6YmJ2MnAyamk1'
 const formEndpoint = `https://formsubmit.co/ajax/${contactEmail}`
@@ -10,15 +8,6 @@ const formEndpoint = `https://formsubmit.co/ajax/${contactEmail}`
 function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formStatus, setFormStatus] = useState(null)
-  const [isEmailCopied, setIsEmailCopied] = useState(false)
-
-  const handleCopyEmail = async () => {
-    await navigator.clipboard.writeText(contactEmail)
-    setIsEmailCopied(true)
-    window.setTimeout(() => {
-      setIsEmailCopied(false)
-    }, 2500)
-  }
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -73,38 +62,29 @@ function Contact() {
       </div>
       <div className="contact-layout">
         <div className="contact-panel">
-          <div className="email-block">
-            <span>Email</span>
-            <div className="email-copy-row">
-              <p>{contactEmail}</p>
-              <button
-                className="copy-button"
-                onClick={handleCopyEmail}
-                type="button"
-              >
-                Maili Kopyala
-              </button>
-            </div>
-            {isEmailCopied && (
-              <p className="copy-message">Mail adresi kopyalandı.</p>
-            )}
+          <div>
+            <span>Mail</span>
+            <p>
+              <a href={`mailto:${contactEmail}`}>
+                {contactEmail}
+              </a>
+            </p>
           </div>
           <div>
             <span>Konum</span>
-            <p>İstanbul</p>
+            <p>İstanbul, Türkiye</p>
           </div>
-          <div className="contact-actions">
-            <a className="button primary" href={mailLink}>
-              Mail Gönder
-            </a>
-            <a
-              className="button secondary"
-              href={instagramUrl}
-              rel="noreferrer"
-              target="_blank"
-            >
-              Instagram
-            </a>
+          <div>
+            <span>Instagram</span>
+            <p>
+              <a
+                href={instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                dytbeyzanurnarbay
+              </a>
+            </p>
           </div>
         </div>
         <form className="contact-form" onSubmit={handleSubmit}>
